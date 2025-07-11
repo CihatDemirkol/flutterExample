@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
-import 'scene/LayoutPage.dart'; // LayoutPage dosyanı import et
+import 'scene/layout.dart';
+import 'scene/welcome_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const LayoutPage(), // Buraya LayoutPage çağrılıyor!
+      title: 'Flutter Uygulama',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(primarySwatch: Colors.blue),
+      initialRoute: '/', // İlk açılan sayfa
+      routes: {
+        '/': (context) => WelcomePage(),
+        '/layout': (context) => Layout(),
+      },
     );
   }
 }
+// main.dart
