@@ -1,16 +1,28 @@
-# flutterexample
+# Flutter Example
 
-A new Flutter project.
+Bu proje, Flutter ile oluşturulmuş örnek bir uygulamadır.
 
-## Getting Started
+## Ekran Görüntüleri
 
-This project is a starting point for a Flutter application.
+### Ana Sayfa
+![Ana Sayfa](screenShots/i1.png)
 
-A few resources to get you started if this is your first Flutter project:
+### Sayfa 2
+![Sayfa 2](screenShots/i2.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Sayfa 3
+![Sayfa 3](screenShots/i3.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Sayfa 4
+![Sayfa 4](screenShots/i4.png)
+
+### Sayfa 5
+![Sayfa 5](screenShots/i5.png)
+
+## Kurulum
+
+```bash
+git clone https://github.com/kullanici/flutterExample.git
+cd flutterexample
+flutter pub get
+flutter run
