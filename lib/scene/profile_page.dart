@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import '../componenat/custom_button.dart'; // Reusable button (kullanılmıyor ama kalabilir)
+import '../componenat/custom_button.dart'; // CustomButton bileşeni burada tanımlı
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -22,16 +22,21 @@ class _ProfilePageState extends State<ProfilePage> {
     }
   }
 
+  void _onEditProfilePressed() {
+    // Buraya butona basıldığında yapılacak işlemi ekleyebilirsin
+    print('Profili Düzenle butonuna basıldı');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Column(
           mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.start, // Üstten başla
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: 40), // Üst boşluk
+            SizedBox(height: 40),
             Center(
               child: GestureDetector(
                 onTap: _pickImage,
@@ -46,8 +51,34 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ),
             ),
-            SizedBox(height: 24),
-            // Diğer bileşenler buraya eklenebilir
+            SizedBox(height: 16),
+            Text(
+              'Ad Soyad',
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 8),
+            Text(
+              'Kullanıcı rolü veya açıklama',
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.grey[600],
+              ),
+            ),
+            SizedBox(height: 32),
+            CustomButton(
+              text: 'Profili Düzenle',
+              icon: Icons.edit,
+              onPressed: _onEditProfilePressed,
+              backgroundColor: Colors.blueAccent,
+              textColor: Colors.white,
+              fontSize: 16,
+              iconSize: 28,
+              borderRadius: 16,
+              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+            ),
           ],
         ),
       ),
