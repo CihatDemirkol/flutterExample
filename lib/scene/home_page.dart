@@ -15,16 +15,22 @@ class _HomePageState extends State<HomePage> {
 
     showDialog(
       context: context,
-      barrierDismissible: false, // dokunmayı engeller
-      builder: (_) => Center(
-        child: CircularProgressIndicator(),
+      barrierDismissible: false, // dışarı tıklama engelli
+      builder: (_) => WillPopScope(
+        onWillPop: () async => false, // geri tuşunu engelle
+        child: Center(
+          child: CircularProgressIndicator(),
+        ),
       ),
     );
 
     await Future.delayed(Duration(seconds: 15)); // 15 saniye bekle
 
-    if (mounted) {
+    if (mounted && Navigator.canPop(context)) {
       Navigator.of(context).pop(); // loading dialog'u kapat
+    }
+
+    if (mounted) {
       setState(() => isLoading = false);
     }
   }
